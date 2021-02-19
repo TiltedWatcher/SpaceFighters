@@ -14,18 +14,17 @@ public class Player : MonoBehaviour{
     float yMin;
     float yMax;
 
+    //states
+    bool repeatFireIsActive = false;
+
+    Coroutine repeatFireCor;
+
     // Start is called before the first frame update
     void Start(){
         createPlaySpaceBoundaries();
-        StartCoroutine(testCoroutine());
         
     }
 
-    private IEnumerator testCoroutine() {
-        Debug.Log("Coroutine started");
-        yield return new WaitForSeconds(3);
-        Debug.Log("Coroutine finished yielding");
-    }
 
     // Update is called once per frame
     void Update(){
@@ -35,15 +34,26 @@ public class Player : MonoBehaviour{
     }
 
     private void Fire() {
-        if (Input.GetButtonDown("Fire1")) {
-            
+        if (Input.GetButtonDown("Fire1") && !repeatFireIsActive) {
+           repeatFireCor = StartCoroutine(fireContinuously());
+        }
+        if (Input.GetButtonUp("Fire1") && repeatFireIsActive) {
+            StopCoroutine(repeatFireCor);
+            repeatFireIsActive = false;
+        }
+    }
+
+    private IEnumerator fireContinuously() {
+        while (true) {
+            repeatFireIsActive = true;
             GameObject laser = Instantiate(
-                playerLaserPrefab, 
-                transform.position, 
+                playerLaserPrefab,
+                transform.position,
                 Quaternion.identity) as GameObject;
 
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, gameParameters.ProjectileSpeedPlayer);
 
+            yield return new WaitForSeconds(gameParameters.ProjectileFireRecoveryTime); 
         }
     }
 

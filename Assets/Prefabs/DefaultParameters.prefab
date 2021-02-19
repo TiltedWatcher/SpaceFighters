@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMoveSpeed: 12
+  projectileSpeedPlayer: 18
   playSpacePaddingY: 4
   playSpacePaddingX: 0.5

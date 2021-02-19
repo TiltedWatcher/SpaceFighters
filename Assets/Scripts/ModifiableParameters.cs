@@ -7,6 +7,7 @@ public class ModifiableParameters : MonoBehaviour{
 
     //game parameters
     [SerializeField] float playerMoveSpeed;
+    [SerializeField] float projectileSpeedPlayer = 10f;
     [SerializeField] float playSpacePaddingY;
     [SerializeField] float playSpacePaddingX;
 
@@ -22,6 +23,10 @@ public class ModifiableParameters : MonoBehaviour{
     public float PlaySpacePaddingY {
         get => playSpacePaddingY;
         set => playSpacePaddingY = value;
+    }
+    public float ProjectileSpeedPlayer {
+        get => projectileSpeedPlayer;
+        set => projectileSpeedPlayer = value;
     }
 
 

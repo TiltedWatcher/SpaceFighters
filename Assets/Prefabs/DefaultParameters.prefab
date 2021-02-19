@@ -48,3 +48,4 @@ MonoBehaviour:
   projectileFireRecoveryTime: 0.1
   playSpacePaddingY: 4
   playSpacePaddingX: 0.5
+  enemyMoveSpeed: 2

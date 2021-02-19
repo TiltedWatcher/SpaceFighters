@@ -11,6 +11,7 @@ public class ModifiableParameters : MonoBehaviour{
     [SerializeField] float projectileFireRecoveryTime = 0.1f;
     [SerializeField] float playSpacePaddingY;
     [SerializeField] float playSpacePaddingX;
+    [SerializeField] float enemyMoveSpeed;
 
     public float PlayerMoveSpeed {
         get => playerMoveSpeed;
@@ -32,6 +33,10 @@ public class ModifiableParameters : MonoBehaviour{
     public float ProjectileFireRecoveryTime {
         get => projectileFireRecoveryTime;
         set => projectileFireRecoveryTime = value;
+    }
+    public float EnemyMoveSpeed {
+        get => enemyMoveSpeed;
+        set => enemyMoveSpeed = value;
     }
 
 

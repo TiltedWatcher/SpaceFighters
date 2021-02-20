@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SecondWave
   m_EditorClassIdentifier: 
   enemyPrefabs: []
-  pathPrefab: {fileID: 0}
+  pathPrefab: {fileID: 6167617522153106351, guid: 2d74e181872ae0c4e8bdbad90363a3ff, type: 3}
   timeBetweenSpawns: 0.5
   spawnTimerRandomizer: 0.3
-  numberOfEnemiesInWave: 0
-  enemyMoveSpeed: 0
+  numberOfEnemiesInWave: 10
+  enemyMoveSpeed: 6

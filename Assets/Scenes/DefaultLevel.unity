@@ -260,7 +260,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 57332717f7e0eff4787fb6a9a5c289b2, type: 2}
   - {fileID: 11400000, guid: 28b45c63fe56f004f9ea0981ad577768, type: 2}
   - {fileID: 11400000, guid: 62e49d1dc2ca745449280451dfb315a9, type: 2}
-  firstWaveIndex: 2
+  firstWaveIndex: 3
 --- !u!4 &1188694588
 Transform:
   m_ObjectHideFlags: 0
@@ -646,7 +646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7994680716021223276, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.72
+      value: -6.53
       objectReference: {fileID: 0}
     - target: {fileID: 7994680716021223276, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
       propertyPath: m_LocalPosition.z

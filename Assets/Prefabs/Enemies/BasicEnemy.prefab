@@ -95,4 +95,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2e2390c7cb19649bcac86e5dd4707b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveConfig: {fileID: 11400000, guid: 57332717f7e0eff4787fb6a9a5c289b2, type: 2}
+  waveConfig: {fileID: 11400000, guid: d66ebb811cd3ac1409f83ae87a003892, type: 2}

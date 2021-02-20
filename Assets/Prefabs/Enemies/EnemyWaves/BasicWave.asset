@@ -18,4 +18,4 @@ MonoBehaviour:
   timeBetweenSpawns: 0.5
   spawnTimerRandomizer: 0.3
   numberOfEnemiesInWave: 6
-  enemyMoveSpeed: 2
+  enemyMoveSpeed: 30

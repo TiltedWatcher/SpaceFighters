@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyPathing : MonoBehaviour{
 
     //parameters
-    [SerializeField] EnemyWaveConfig waveConfig;
+    EnemyWaveConfig waveConfig;
 
     //cached variables
     List<Transform> waypoints;
@@ -20,6 +20,10 @@ public class EnemyPathing : MonoBehaviour{
     // Update is called once per frame
     void Update() {
         Move();
+    }
+
+    public void setWaveConfig(EnemyWaveConfig config) {
+        waveConfig = config;
     }
 
     private void Move() {

@@ -22,10 +22,6 @@ public class EnemyPathing : MonoBehaviour{
         Move();
     }
 
-    public void setWaveConfig(EnemyWaveConfig config) {
-        waveConfig = config;
-    }
-
     private void Move() {
         if (waypointIndex <= waypoints.Count - 1) {
             var targetPosition = waypoints[waypointIndex].transform.position;
@@ -39,4 +35,9 @@ public class EnemyPathing : MonoBehaviour{
 
         }
     }
+
+    public void setWaveConfig(EnemyWaveConfig config) {
+        waveConfig = config;
+    }
+
 }

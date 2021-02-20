@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c41f47ed17017c5468cdeee50230cb30, type: 3}
-  m_Name: HeavyWaveSmal
+  m_Name: BasicArmoredWave
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 2465890857993298894, guid: 12908e132d2eb3746ba3cf122e0d20e2, type: 3}
-  pathPrefab: {fileID: 400147552311403953, guid: 6d4d621799fd922469aa6c63cf078c4d, type: 3}
-  timeBetweenSpawns: 4
+  - {fileID: 2465890857993298894, guid: 3974cf796cb501246ba7c76c90d77e45, type: 3}
+  pathPrefab: {fileID: 4678807914460580957, guid: 6cb9408d6b84b2e4aa816c92aaeb6321, type: 3}
+  timeBetweenSpawns: 0.5
   spawnTimerRandomizer: 0.3
-  numberOfEnemiesInWave: 2
-  enemyMoveSpeed: 0.8
+  numberOfEnemiesInWave: 10
+  enemyMoveSpeed: 3
   randomizeEnemies: 0

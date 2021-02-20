@@ -7,11 +7,17 @@ public class EnemySpawner : MonoBehaviour{
     //parameters
     [SerializeField] List<EnemyWaveConfig> WaveConfigs;
     [SerializeField] int firstWaveIndex = 0;
+    [SerializeField] bool looping = false;
+    [SerializeField] float secondsBetweenWaves;
 
 
     // Start is called before the first frame update
-    void Start(){
-        StartCoroutine(spawnAllWaves());
+    IEnumerator Start(){
+        do {
+            yield return StartCoroutine(spawnAllWaves());
+            //yield return StartCoroutine(waitXSeconds(secondsBetweenWaves));
+        } while (looping);
+           
     }
     private IEnumerator spawnAllWaves() {
         for (int i = firstWaveIndex; i < WaveConfigs.Count; i++) {
@@ -22,6 +28,7 @@ public class EnemySpawner : MonoBehaviour{
             } else {
                 yield return StartCoroutine(SpawnAllEnemiesInWave(currentWave));
             }
+            yield return StartCoroutine(waitXSeconds(secondsBetweenWaves));
         }
     }
 
@@ -51,6 +58,11 @@ public class EnemySpawner : MonoBehaviour{
 
             yield return new WaitForSeconds(waveConfig.getTimeBetweenSpawns());
         }
+    }
+
+    private IEnumerator waitXSeconds(float x) {
+        yield return new WaitForSeconds(x);
+    
     }
 
 }

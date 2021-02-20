@@ -762,9 +762,21 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7994680716021223266, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
+      propertyPath: test
+      value: 
+      objectReference: {fileID: 11400000, guid: d66ebb811cd3ac1409f83ae87a003892, type: 2}
+    - target: {fileID: 7994680716021223266, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
       propertyPath: gameParameters
       value: 
       objectReference: {fileID: 1297126881}
+    - target: {fileID: 7994680716021223266, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
+      propertyPath: playSpacePaddingX
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994680716021223266, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
+      propertyPath: playSpacePaddingY
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7994680716021223276, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
       propertyPath: m_RootOrder
       value: 2

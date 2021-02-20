@@ -259,7 +259,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d66ebb811cd3ac1409f83ae87a003892, type: 2}
   - {fileID: 11400000, guid: 57332717f7e0eff4787fb6a9a5c289b2, type: 2}
   - {fileID: 11400000, guid: 28b45c63fe56f004f9ea0981ad577768, type: 2}
-  firstWaveIndex: 0
+  - {fileID: 11400000, guid: 62e49d1dc2ca745449280451dfb315a9, type: 2}
+  firstWaveIndex: 2
 --- !u!4 &1188694588
 Transform:
   m_ObjectHideFlags: 0

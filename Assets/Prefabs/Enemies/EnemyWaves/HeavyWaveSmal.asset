@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c41f47ed17017c5468cdeee50230cb30, type: 3}
-  m_Name: SecondWave
+  m_Name: HeavyWaveSmal
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 2465890857993298894, guid: 0f57439f85ffad14da99c7ce1cddddd3, type: 3}
-  pathPrefab: {fileID: 6167617522153106351, guid: 2d74e181872ae0c4e8bdbad90363a3ff, type: 3}
-  timeBetweenSpawns: 0.5
+  - {fileID: 2465890857993298894, guid: 12908e132d2eb3746ba3cf122e0d20e2, type: 3}
+  pathPrefab: {fileID: 400147552311403953, guid: 6d4d621799fd922469aa6c63cf078c4d, type: 3}
+  timeBetweenSpawns: 2
   spawnTimerRandomizer: 0.3
-  numberOfEnemiesInWave: 10
-  enemyMoveSpeed: 2
+  numberOfEnemiesInWave: 2
+  enemyMoveSpeed: 0.8

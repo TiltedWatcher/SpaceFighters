@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c41f47ed17017c5468cdeee50230cb30, type: 3}
-  m_Name: BasicWave
+  m_Name: GCWaveSmall
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 2465890857993298894, guid: 0f57439f85ffad14da99c7ce1cddddd3, type: 3}
-  pathPrefab: {fileID: 4678807914460580957, guid: 78e940d83c9592943a681fcc27676650, type: 3}
-  timeBetweenSpawns: 0.5
+  - {fileID: 2465890857993298894, guid: aa4589276c145854cbd49eb893b8bf3c, type: 3}
+  pathPrefab: {fileID: 6167617522153106351, guid: 2d74e181872ae0c4e8bdbad90363a3ff, type: 3}
+  timeBetweenSpawns: 0.2
   spawnTimerRandomizer: 0.3
-  numberOfEnemiesInWave: 10
-  enemyMoveSpeed: 3
+  numberOfEnemiesInWave: 4
+  enemyMoveSpeed: 8

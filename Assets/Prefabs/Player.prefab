@@ -95,5 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b2422f73a01494bbc1f85090328cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameParameters: {fileID: 0}
   playerLaserPrefab: {fileID: 999204909185383528, guid: 847f6b5b8c9af2449870b6bcc796f0fa, type: 3}
+  playerMoveSpeed: 15
+  projectileSpeedPlayer: 18
+  projectileFireRecoveryTime: 0.2
+  playSpacePaddingY: 4
+  playSpacePaddingX: 0.5

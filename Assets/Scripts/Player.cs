@@ -5,8 +5,12 @@ using UnityEngine;
 public class Player : MonoBehaviour{
 
     //parameters
-    [SerializeField] ModifiableParameters gameParameters;
     [SerializeField] GameObject playerLaserPrefab;
+    [SerializeField] float playerMoveSpeed;
+    [SerializeField] float projectileSpeedPlayer = 10f;
+    [SerializeField] float projectileFireRecoveryTime = 0.1f;
+    [SerializeField] float playSpacePaddingY;
+    [SerializeField] float playSpacePaddingX;
 
     //the edges of the playspace.
     float xMin;
@@ -51,15 +55,15 @@ public class Player : MonoBehaviour{
                 transform.position,
                 Quaternion.identity) as GameObject;
 
-            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, gameParameters.ProjectileSpeedPlayer);
+            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeedPlayer);
 
-            yield return new WaitForSeconds(gameParameters.ProjectileFireRecoveryTime); 
+            yield return new WaitForSeconds(projectileFireRecoveryTime); 
         }
     }
 
     private void move() {
-        var deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * gameParameters.PlayerMoveSpeed;
-        var deltaY = Input.GetAxis("Vertical") * Time.deltaTime * gameParameters.PlayerMoveSpeed;
+        var deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * playerMoveSpeed;
+        var deltaY = Input.GetAxis("Vertical") * Time.deltaTime * playerMoveSpeed;
         
         var newXPos = Mathf.Clamp(
             transform.position.x + deltaX,
@@ -74,13 +78,10 @@ public class Player : MonoBehaviour{
 
     private void createPlaySpaceBoundaries() {
         Camera gameCamera = Camera.main;
-        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + gameParameters.PlaySpacePaddingX;
-        xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - gameParameters.PlaySpacePaddingX;
-        yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + gameParameters.PlaySpacePaddingX; //adding X padding here, since it's about not having the player disappear of the bottom of the Map. Y padding only pads towards the top
-        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - gameParameters.PlaySpacePaddingY;
-        Debug.Log(gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y);
-        Debug.Log(gameParameters.PlaySpacePaddingY);
-        Debug.Log("min " + yMin + ", max " + yMax);
-        Debug.Log("min " + xMin + ", max " + xMax);
+        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + playSpacePaddingX;
+        xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - playSpacePaddingX;
+        yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + playSpacePaddingX; //adding X padding here, since it's about not having the player disappear of the bottom of the Map. Y padding only pads towards the top
+        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - playSpacePaddingY;
+       
     }
 }

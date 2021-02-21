@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2465890857993298888}
   - component: {fileID: 2465890857993298889}
   - component: {fileID: 1578678886}
+  - component: {fileID: -6958872275232625715}
+  - component: {fileID: 8005685758716027355}
   m_Layer: 0
   m_Name: HeavyShip
   m_TagString: Untagged
@@ -95,3 +97,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2e2390c7cb19649bcac86e5dd4707b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6958872275232625715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465890857993298894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdce10d10f865784d9fe1eafba037705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
+  health: 1500
+  dmgReductionFromArmor: 20
+--- !u!60 &8005685758716027355
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465890857993298894}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.82, y: 0.84}
+    newSize: {x: 1.04, y: 0.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.39677966, y: -0.20139715}
+      - {x: 0.3987841, y: 0.29173407}
+      - {x: 0.0040090093, y: 0.43603602}
+      - {x: -0.39835596, y: 0.28569803}
+      - {x: -0.40002257, y: -0.2033115}
+      - {x: 0.004932911, y: -0.42169}

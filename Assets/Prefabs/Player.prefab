@@ -98,6 +98,6 @@ MonoBehaviour:
   playerLaserPrefab: {fileID: 999204909185383528, guid: 847f6b5b8c9af2449870b6bcc796f0fa, type: 3}
   playerMoveSpeed: 15
   projectileSpeedPlayer: 18
-  projectileFireRecoveryTime: 0.2
+  projectileFireRecoveryTime: 0.15
   playSpacePaddingY: 4
   playSpacePaddingX: 0.5

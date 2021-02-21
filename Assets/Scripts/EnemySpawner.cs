@@ -44,8 +44,15 @@ public class EnemySpawner : MonoBehaviour{
                 waveConfig.getWaypointsForPath()[0].transform.position,
                 Quaternion.identity);
             newEnemy.GetComponent<EnemyPathing>().setWaveConfig(waveConfig);
+            var lastEnemy = newEnemy.GetComponent<Enemy>();
 
-            yield return new WaitForSeconds(waveConfig.getTimeBetweenSpawns()); 
+            if (lastEnemy.IsBoss) {
+                yield return StartCoroutine(lastEnemy.bossFight());
+            } else {
+                yield return new WaitForSeconds(waveConfig.getTimeBetweenSpawns());
+            }
+
+            
         }
     }
 

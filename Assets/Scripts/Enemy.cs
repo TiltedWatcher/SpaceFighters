@@ -11,12 +11,13 @@ public class Enemy : MonoBehaviour{
     [SerializeField] float minTimeBetweenShots;
     [SerializeField] float maxTimeBetweenShots;
     [SerializeField] float projectileSpeed;
-    //[SerializeField] bool isDamagedByFriendlyFire;
+    [SerializeField] bool isBosss;
     [SerializeField] GameObject projectile;
 
 
     //states 
     [SerializeField] float shotTimer; //serialized for debugging
+    bool alive = true;
 
     void Start(){
         shotTimer = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
@@ -73,7 +74,20 @@ public class Enemy : MonoBehaviour{
     }
 
     public void DestroyThisEnemy() {
+        alive = false;
         Destroy(gameObject);
+    }
+
+    public IEnumerator bossFight() {
+        yield return new WaitWhile(isAlive) ;
+    }
+
+    public bool IsBoss {
+        get => IsBoss;
+    }
+
+    private bool isAlive() {
+        return alive;
     }
 
     public float Speed {

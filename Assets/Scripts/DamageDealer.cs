@@ -7,15 +7,10 @@ public class DamageDealer : MonoBehaviour{
 
     [SerializeField] int damage;
     [SerializeField] bool ignoresArmor;
-    [SerializeField] bool isPlayerWeapon;
     [SerializeField] float speed = 0; //the speed at which the projectile moves. If thise is not a projectile, leave at 0 
 
     public int Damage {
         get => damage;
-    }
-
-    public bool IsPlayerWeapon {
-        get => isPlayerWeapon;
     }
 
     public bool IgnoresArmor {

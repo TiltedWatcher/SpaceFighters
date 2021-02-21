@@ -5,12 +5,21 @@ using UnityEngine;
 public class Player : MonoBehaviour{
 
     //parameters
+    [Header("Weapons")]
     [SerializeField] GameObject playerLaserPrefab;
-    [SerializeField] float playerMoveSpeed;
     [SerializeField] float projectileSpeedPlayer = 10f;
     [SerializeField] float projectileFireRecoveryTime = 0.1f;
+
+    [Header("Player Movement")]
+    [SerializeField] float playerMoveSpeed;
     [SerializeField] float playSpacePaddingY;
     [SerializeField] float playSpacePaddingX;
+
+    [Header("Player Stats")]
+    [SerializeField] int playerHealth;
+    [SerializeField] bool isInvincible;
+    [SerializeField] int damageReduction;
+    [SerializeField] int extraLifes;
 
     //the edges of the playspace.
     float xMin;
@@ -20,13 +29,14 @@ public class Player : MonoBehaviour{
 
     //states
     bool repeatFireIsActive = false;
+    float remainingHealth;
 
     Coroutine repeatFireCor;
 
     // Start is called before the first frame update
     void Start(){
         createPlaySpaceBoundaries();
-        
+        remainingHealth = playerHealth;
     }
 
 
@@ -35,6 +45,11 @@ public class Player : MonoBehaviour{
         move();
         Fire();
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("I was hit!");
+        processHit(other);
     }
 
     private void Fire() {
@@ -75,6 +90,41 @@ public class Player : MonoBehaviour{
         transform.position = new Vector2(newXPos, newYPos);
       
     }
+
+    private void processHit(Collider2D other) {
+        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        if (isInvincible) {
+            damageDealer.hit();
+            return;
+        }
+
+        if (!damageDealer.IsPlayerWeapon) {
+            float damageDealt = damageDealer.Damage;
+
+            if (!damageDealer.IgnoresArmor) {
+                damageDealt -= damageReduction;
+            }
+
+            if (damageDealt > 0) {
+                remainingHealth -= damageDealt;
+                Debug.Log("Health remaining: " + remainingHealth);
+
+                if (remainingHealth <= 0) {
+                    playerDeath();
+                }
+            
+            }
+        
+        }
+        damageDealer.hit();
+        
+    }
+
+    private void playerDeath() {
+        Destroy(gameObject);
+    
+    }
+
 
     private void createPlaySpaceBoundaries() {
         Camera gameCamera = Camera.main;

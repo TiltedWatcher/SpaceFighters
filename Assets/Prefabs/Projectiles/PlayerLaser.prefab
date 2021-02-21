@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3560323693658962354}
   - component: {fileID: 3594061340798978420}
   - component: {fileID: 8210278070827145191}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerLaser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,3 +136,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 80
   ignoresArmor: 0
+  isPlayerWeapon: 0
+  speed: 0

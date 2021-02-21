@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 662586031326567249}
   - component: {fileID: 4959670839024473432}
   - component: {fileID: 3012064254015112220}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EnemyLaserBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   ignoresArmor: 0
+  isPlayerWeapon: 0
   speed: 10
 --- !u!50 &3012064254015112220
 Rigidbody2D:

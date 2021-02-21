@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1578678886}
   - component: {fileID: -3266551836277950380}
   - component: {fileID: 7200731708010623128}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BasicEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,9 +112,10 @@ MonoBehaviour:
   speed: 3
   health: 250
   dmgReductionFromArmor: 0
-  minTimeBetweenShots: 0.2
+  minTimeBetweenShots: 0.5
   maxTimeBetweenShots: 3
   projectileSpeed: 8
+  isDamagedByFriendlyFire: 0
   projectile: {fileID: 3237549433109087503, guid: d0d42ed968704644e97975e0843dd2d7, type: 3}
   shotTimer: 0
 --- !u!58 &7200731708010623128

@@ -82,7 +82,7 @@ public class Enemy : MonoBehaviour{
         if (damageDealt > 0) { //don't process damage, if damage was reduced to zero, or a negative number by dmg reduction from armor
             health -= damageDealt;
             if (health <= 0) {
-                DestroyThisEnemy();
+                Death();
             }
         } 
         
@@ -91,6 +91,12 @@ public class Enemy : MonoBehaviour{
 
     public void DestroyThisEnemy() {
         Debug.Log("Enemy Destroyed");
+        alive = false;
+        StopCoroutine(bossFight());
+        Destroy(gameObject);
+    }
+
+    public void Death() {
         alive = false;
         StopCoroutine(bossFight());
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);

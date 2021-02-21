@@ -6,38 +6,8 @@ using UnityEngine;
 public class ModifiableParameters : MonoBehaviour{
 
     //game parameters
-    [SerializeField] float playerMoveSpeed;
-    [SerializeField] float projectileSpeedPlayer = 10f;
-    [SerializeField] float projectileFireRecoveryTime = 0.1f;
-    [SerializeField] float playSpacePaddingY;
-    [SerializeField] float playSpacePaddingX;
-    [SerializeField] float enemyMoveSpeed;
+    [Range(0.1f, 20f)] [SerializeField] float timescale = 1;
 
-    public float PlayerMoveSpeed {
-        get => playerMoveSpeed;
-        set => playerMoveSpeed = value;
-    }
- 
-    public float PlaySpacePaddingX {
-        get => playSpacePaddingX;
-        set => playSpacePaddingX = value;
-    }
-    public float PlaySpacePaddingY {
-        get => playSpacePaddingY;
-        set => playSpacePaddingY = value;
-    }
-    public float ProjectileSpeedPlayer {
-        get => projectileSpeedPlayer;
-        set => projectileSpeedPlayer = value;
-    }
-    public float ProjectileFireRecoveryTime {
-        get => projectileFireRecoveryTime;
-        set => projectileFireRecoveryTime = value;
-    }
-    public float EnemyMoveSpeed {
-        get => enemyMoveSpeed;
-        set => enemyMoveSpeed = value;
-    }
 
 
     // Start is called before the first frame update
@@ -47,6 +17,6 @@ public class ModifiableParameters : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        
+        Time.timeScale = timescale;
     }
 }

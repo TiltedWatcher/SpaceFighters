@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1578678886}
   - component: {fileID: -6958872275232625715}
   - component: {fileID: 8005685758716027355}
+  - component: {fileID: -764053804118111467}
   m_Layer: 9
   m_Name: Boss1
   m_TagString: Untagged
@@ -92,7 +93,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2465890857993298894}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf2e2390c7cb19649bcac86e5dd4707b, type: 3}
   m_Name: 
@@ -143,9 +144,44 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.39677966, y: -0.20139715}
-      - {x: 0.3987841, y: 0.29173407}
-      - {x: 0.0040090093, y: 0.43603602}
-      - {x: -0.39835596, y: 0.28569803}
-      - {x: -0.40002257, y: -0.2033115}
-      - {x: 0.004932911, y: -0.42169}
+    - - {x: -0.40685946, y: -0.5119024}
+      - {x: -0.22327758, y: -0.5016908}
+      - {x: -0.14744532, y: -0.2736641}
+      - {x: 0.16961639, y: -0.27094617}
+      - {x: 0.22644821, y: -0.50334835}
+      - {x: 0.40433866, y: -0.5040236}
+      - {x: 0.6426678, y: -0.7650951}
+      - {x: 0.8454535, y: -0.729377}
+      - {x: 0.8400775, y: -0.43427166}
+      - {x: 0.4987315, y: -0.12508751}
+      - {x: 0.44023678, y: 0.07560443}
+      - {x: 0.67071646, y: 0.72354645}
+      - {x: 0.58291614, y: 0.7617915}
+      - {x: 0.16126145, y: 0.2427214}
+      - {x: -0.16088536, y: 0.23771876}
+      - {x: -0.55960155, y: 0.7588126}
+      - {x: -0.68118775, y: 0.7186314}
+      - {x: -0.46803695, y: 0.068912566}
+      - {x: -0.51433605, y: -0.12687527}
+      - {x: -0.86371255, y: -0.4274581}
+      - {x: -0.8297224, y: -0.7297905}
+      - {x: -0.6415524, y: -0.75073946}
+--- !u!114 &-764053804118111467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465890857993298894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ae151e41431a346922b138c204fbb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossWeapons:
+  - projectile: {fileID: 0}
+    weaponCooldownMin: 0
+    weaponCooldownMax: 0
+  - projectile: {fileID: 0}
+    weaponCooldownMin: 0
+    weaponCooldownMax: 0

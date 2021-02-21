@@ -109,13 +109,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdce10d10f865784d9fe1eafba037705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 4
   health: 250
   dmgReductionFromArmor: 0
   minTimeBetweenShots: 0.5
   maxTimeBetweenShots: 3
   projectileSpeed: 8
-  isDamagedByFriendlyFire: 0
+  isBoss: 0
   projectile: {fileID: 3237549433109087503, guid: d0d42ed968704644e97975e0843dd2d7, type: 3}
   shotTimer: 0
 --- !u!58 &7200731708010623128

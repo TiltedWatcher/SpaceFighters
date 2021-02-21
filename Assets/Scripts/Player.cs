@@ -48,8 +48,12 @@ public class Player : MonoBehaviour{
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
+        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        if (!damageDealer) {
+            return;
+        }
         Debug.Log("I was hit!");
-        processHit(other);
+        processHit(damageDealer);
     }
 
     private void Fire() {
@@ -91,30 +95,26 @@ public class Player : MonoBehaviour{
       
     }
 
-    private void processHit(Collider2D other) {
-        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+    private void processHit(DamageDealer damageDealer) {
         if (isInvincible) {
             damageDealer.hit();
             return;
         }
 
-        if (!damageDealer.IsPlayerWeapon) {
-            float damageDealt = damageDealer.Damage;
+        float damageDealt = damageDealer.Damage;
 
-            if (!damageDealer.IgnoresArmor) {
-                damageDealt -= damageReduction;
+        if (!damageDealer.IgnoresArmor) {
+            damageDealt -= damageReduction;
+        }
+
+        if (damageDealt > 0) {
+            remainingHealth -= damageDealt;
+            Debug.Log("Health remaining: " + remainingHealth);
+
+            if (remainingHealth <= 0) {
+                playerDeath();
             }
-
-            if (damageDealt > 0) {
-                remainingHealth -= damageDealt;
-                Debug.Log("Health remaining: " + remainingHealth);
-
-                if (remainingHealth <= 0) {
-                    playerDeath();
-                }
             
-            }
-        
         }
         damageDealer.hit();
         

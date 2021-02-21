@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour{
     [SerializeField] float minTimeBetweenShots;
     [SerializeField] float maxTimeBetweenShots;
     [SerializeField] float projectileSpeed;
-    [SerializeField] bool isDamagedByFriendlyFire;
+    //[SerializeField] bool isDamagedByFriendlyFire;
     [SerializeField] GameObject projectile;
 
 
@@ -29,7 +29,14 @@ public class Enemy : MonoBehaviour{
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        ProcessHit(other);
+        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        
+        if (!damageDealer) {
+            return;
+        }
+        ProcessHit(damageDealer);
+        
+        
 
     }
 
@@ -49,21 +56,20 @@ public class Enemy : MonoBehaviour{
         enemyFire.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
     }
 
-    private void ProcessHit(Collider2D other) {
-        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
-        if (damageDealer.IsPlayerWeapon || isDamagedByFriendlyFire) {
-            float damageDealt = damageDealer.Damage;
-            if (!damageDealer.IgnoresArmor) {
-                damageDealt -= dmgReductionFromArmor;
-            }
+    private void ProcessHit(DamageDealer damageDealer) {
+        float damageDealt = damageDealer.Damage;
 
-            if (damageDealt > 0) { //don't process damage, if damage was reduced to zero, or a negative number by dmg reduction from armor
-                health -= damageDealt;
-                if (health <= 0) {
-                    DestroyThisEnemy();
-                }
-            } 
+        if (!damageDealer.IgnoresArmor) {
+            damageDealt -= dmgReductionFromArmor;
         }
+
+        if (damageDealt > 0) { //don't process damage, if damage was reduced to zero, or a negative number by dmg reduction from armor
+            health -= damageDealt;
+            if (health <= 0) {
+                DestroyThisEnemy();
+            }
+        } 
+        
     }
 
     public void DestroyThisEnemy() {

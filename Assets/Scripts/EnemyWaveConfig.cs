@@ -10,7 +10,6 @@ public class EnemyWaveConfig : ScriptableObject{
     [SerializeField] float timeBetweenSpawns = 0.5f;
     [SerializeField] float spawnTimerRandomizer = 0.3f;
     [SerializeField] int numberOfEnemiesInWave;
-    [SerializeField] float enemyMoveSpeed;
     [SerializeField] bool randomizeEnemies;
 
     public GameObject getEnemyPrefab() {
@@ -46,9 +45,6 @@ public class EnemyWaveConfig : ScriptableObject{
         return numberOfEnemiesInWave;
     }
 
-    public float getSpeed() {
-        return enemyMoveSpeed;
-    }
 
     public bool enemiesAreRandomized() {
         return randomizeEnemies;

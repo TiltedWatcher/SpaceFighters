@@ -117,6 +117,8 @@ MonoBehaviour:
   projectileSpeed: 8
   isBoss: 0
   projectile: {fileID: 3237549433109087503, guid: d0d42ed968704644e97975e0843dd2d7, type: 3}
+  deathVFX: {fileID: 1026762148002089913, guid: bcd0c2db521f8384abc559d2fc16ffcb, type: 3}
+  explosionDuration: 1
   shotTimer: 0
 --- !u!58 &7239850381435837321
 CircleCollider2D:

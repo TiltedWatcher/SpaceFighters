@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour{
     [SerializeField] float projectileSpeed;
     [SerializeField] protected bool isBoss;
     [SerializeField] GameObject projectile;
+    [SerializeField] GameObject deathVFX;
+    [SerializeField] float explosionDuration = 1f;
 
 
     //states 
@@ -91,7 +93,9 @@ public class Enemy : MonoBehaviour{
         Debug.Log("Enemy Destroyed");
         alive = false;
         StopCoroutine(bossFight());
+        GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        Destroy(explosion, explosionDuration);
     }
 
     public IEnumerator bossFight() {

@@ -52,7 +52,6 @@ public class Player : MonoBehaviour{
         if (!damageDealer) {
             return;
         }
-        Debug.Log("I was hit!");
         processHit(damageDealer);
     }
 

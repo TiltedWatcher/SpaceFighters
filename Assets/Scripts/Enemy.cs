@@ -5,29 +5,41 @@ using UnityEngine;
 public class Enemy : MonoBehaviour{
     // Start is called before the first frame update
 
-    [SerializeField] float speed;
-    [SerializeField] float health;
-    [SerializeField] float dmgReductionFromArmor;
+    [SerializeField] protected float speed;
+    [SerializeField] protected float health;
+    [SerializeField] protected float dmgReductionFromArmor;
     [SerializeField] float minTimeBetweenShots;
     [SerializeField] float maxTimeBetweenShots;
     [SerializeField] float projectileSpeed;
-    [SerializeField] bool isBoss;
+    [SerializeField] protected bool isBoss;
     [SerializeField] GameObject projectile;
 
 
     //states 
     [SerializeField] float shotTimer; //serialized for debugging
-    bool alive = true;
+    protected bool alive = true;
+
+    //cached elements
+    BossLogic thisBoss;
 
     void Start(){
+       
+        if (isBoss) {
+            thisBoss = gameObject.GetComponent<BossLogic>();
+        } 
         shotTimer = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
+        
     }
 
     // Update is called once per frame
     void Update(){
+        if (IsBoss) {
+            BossCombatOperations();
+        }
         ShootAfterCountDown();
         
     }
+
 
     private void OnTriggerEnter2D(Collider2D other) {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
@@ -36,9 +48,10 @@ public class Enemy : MonoBehaviour{
             return;
         }
         ProcessHit(damageDealer);
-        
-        
+    }
 
+    private void BossCombatOperations() {
+        Debug.Log("Boss is fighting!");
     }
 
     private void ShootAfterCountDown() {
@@ -73,6 +86,7 @@ public class Enemy : MonoBehaviour{
         
     }
 
+
     public void DestroyThisEnemy() {
         Debug.Log("Enemy Destroyed");
         alive = false;
@@ -81,7 +95,6 @@ public class Enemy : MonoBehaviour{
     }
 
     public IEnumerator bossFight() {
-        Debug.Log("Bossfight happening");
         yield return new WaitWhile(isAlive) ;
     }
 

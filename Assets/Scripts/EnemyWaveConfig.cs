@@ -12,6 +12,8 @@ public class EnemyWaveConfig : ScriptableObject{
     [SerializeField] int numberOfEnemiesInWave;
     [SerializeField] bool randomizeEnemies;
 
+    [SerializeField] bool isBossWave;
+
     public GameObject getEnemyPrefab() {
         return enemyPrefabs[0];
     }
@@ -32,6 +34,7 @@ public class EnemyWaveConfig : ScriptableObject{
         }
         return waveWayPoints ;
     }
+
 
     public float getTimeBetweenSpawns() {
         return timeBetweenSpawns;
@@ -54,5 +57,8 @@ public class EnemyWaveConfig : ScriptableObject{
         return enemyPrefabs.Length;
     }
 
+    public bool IsBossWave() {
+        return isBossWave;
+    }
 
 }

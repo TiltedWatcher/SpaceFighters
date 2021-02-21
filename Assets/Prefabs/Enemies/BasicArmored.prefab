@@ -112,11 +112,10 @@ MonoBehaviour:
   speed: 3
   health: 250
   dmgReductionFromArmor: 30
-  minTimeBetweenShots: 0
-  maxTimeBetweenShots: 0
-  projectileSpeed: 0
-  isDamagedByFriendlyFire: 0
-  projectile: {fileID: 0}
+  minTimeBetweenShots: 1
+  maxTimeBetweenShots: 3
+  projectileSpeed: 8
+  projectile: {fileID: 3237549433109087503, guid: d0d42ed968704644e97975e0843dd2d7, type: 3}
   shotTimer: 0
 --- !u!58 &-2446296022919589540
 CircleCollider2D:

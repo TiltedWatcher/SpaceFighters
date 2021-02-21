@@ -16,7 +16,6 @@ public class EnemySpawner : MonoBehaviour{
     IEnumerator Start(){
 
         if (spawnerIsActive) {
-            spawnerIsActive = false;
             do {
                 yield return StartCoroutine(spawnAllWaves());
                 //yield return StartCoroutine(waitXSeconds(secondsBetweenWaves));

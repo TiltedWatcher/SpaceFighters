@@ -110,8 +110,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  health: 1500
+  health: 750
   dmgReductionFromArmor: 20
+  minTimeBetweenShots: 0
+  maxTimeBetweenShots: 0
+  timeSinceLastShot: 0
 --- !u!60 &8005685758716027355
 PolygonCollider2D:
   m_ObjectHideFlags: 0

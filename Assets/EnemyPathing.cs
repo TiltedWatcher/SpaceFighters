@@ -37,6 +37,8 @@ public class EnemyPathing : MonoBehaviour{
                 waypointIndex++;
             }
 
+        } else if (gameObject.GetComponent<Enemy>().IsBoss) {
+            waypointIndex = 1;
         }
     }
 

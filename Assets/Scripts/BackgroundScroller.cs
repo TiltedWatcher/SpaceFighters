@@ -12,6 +12,7 @@ public class BackgroundScroller : MonoBehaviour{
     [SerializeField] float distanceFromOriginRandomizerX = 10f;
     [SerializeField] float startPosY;
     [SerializeField] float targetPosY;
+    [SerializeField] bool hasMovingStarSheet;
 
     Material backgroundMaterial;
     Vector2 offSet;
@@ -23,19 +24,28 @@ public class BackgroundScroller : MonoBehaviour{
         backgroundMaterial = GetComponent<Renderer>().material;
         offSet = new Vector2(0f, backgroundScrollSpeed);
 
-        float xOffSet = UnityEngine.Random.Range(-distanceFromOriginRandomizerX, distanceFromOriginRandomizerX );
-        stars = Instantiate(
-            starTemplate, 
-            new Vector3(xOffSet, startPosY), 
-            Quaternion.identity);
-        previousStar = Instantiate(stars);
+        if (starTemplate == null) {
+            hasMovingStarSheet = false;
+        }
+
+        if (hasMovingStarSheet) {
+            float xOffSet = UnityEngine.Random.Range(-distanceFromOriginRandomizerX, distanceFromOriginRandomizerX);
+            stars = Instantiate(
+                starTemplate,
+                new Vector3(xOffSet, startPosY),
+                Quaternion.identity);
+            previousStar = Instantiate(stars); 
+        }
         
     }
 
     // Update is called once per frame
     void Update(){
         backgroundMaterial.mainTextureOffset += offSet * Time.deltaTime;
-        MoveStars();
+        if (hasMovingStarSheet) {
+            MoveStars();
+        }
+        
     }
 
     private void MoveStars() {

@@ -19,3 +19,4 @@ MonoBehaviour:
   spawnTimerRandomizer: 0.3
   numberOfEnemiesInWave: 1
   randomizeEnemies: 0
+  isBossWave: 1

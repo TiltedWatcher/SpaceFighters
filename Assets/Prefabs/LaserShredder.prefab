@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1245910535660066877}
   m_Layer: 0
   m_Name: LaserShredder
-  m_TagString: Untagged
+  m_TagString: Shredder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,3 +70,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff3f3b1e4a77114db08eb70e02f4f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroysEnemies: 0

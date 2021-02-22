@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 339098057}
+  - component: {fileID: 339098058}
   m_Layer: 0
   m_Name: SimpletonObject
   m_TagString: Untagged
@@ -153,6 +154,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &339098058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339098056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a4e47a814c02f4abc3d0ac2f839a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1095646276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -531,8 +544,24 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7994680716021223266, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b157586bf53b59a4999b999320eeba88, type: 3}
+    - target: {fileID: 7994680716021223266, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
       propertyPath: extraLifes
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994680716021223266, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d2027b884aa85b349b653be25910afea, type: 3}
+    - target: {fileID: 7994680716021223266, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
+      propertyPath: deathSoundVolume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994680716021223266, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
+      propertyPath: shootSoundVolume
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 7994680716021223266, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
       propertyPath: projectileFireRecoveryTime

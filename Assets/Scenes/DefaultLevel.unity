@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &339098056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 339098057}
+  m_Layer: 0
+  m_Name: SimpletonObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &339098057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339098056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1095646276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -182,6 +212,30 @@ PrefabInstance:
       propertyPath: spawnerIsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8226559615232614237, guid: 404f4c4d942f95745a3b0470806af80e, type: 3}
+      propertyPath: secondsBetweenWaves
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8226559615232614237, guid: 404f4c4d942f95745a3b0470806af80e, type: 3}
+      propertyPath: WaveConfigs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8226559615232614237, guid: 404f4c4d942f95745a3b0470806af80e, type: 3}
+      propertyPath: WaveConfigs.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 787e71f6fa5c91a49830c56d66f92bd7, type: 2}
+    - target: {fileID: 8226559615232614237, guid: 404f4c4d942f95745a3b0470806af80e, type: 3}
+      propertyPath: WaveConfigs.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 62e49d1dc2ca745449280451dfb315a9, type: 2}
+    - target: {fileID: 8226559615232614237, guid: 404f4c4d942f95745a3b0470806af80e, type: 3}
+      propertyPath: WaveConfigs.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 57332717f7e0eff4787fb6a9a5c289b2, type: 2}
+    - target: {fileID: 8226559615232614237, guid: 404f4c4d942f95745a3b0470806af80e, type: 3}
+      propertyPath: WaveConfigs.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 28b45c63fe56f004f9ea0981ad577768, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 404f4c4d942f95745a3b0470806af80e, type: 3}
 --- !u!1 &1129680406
@@ -248,7 +302,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4275891926690829118
 PrefabInstance:
@@ -486,7 +540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7994680716021223276, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7994680716021223276, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
       propertyPath: m_LocalPosition.x

@@ -21,6 +21,12 @@ public class Player : MonoBehaviour{
     [SerializeField] int damageReduction;
     [SerializeField] int extraLifes;
 
+    [Header("Player FX")]
+    [SerializeField] AudioClip deathSound;
+    [SerializeField] [Range(0, 1)] float deathSoundVolume;
+    [SerializeField] AudioClip shootSound;
+    [SerializeField] [Range(0, 1)] float shootSoundVolume;
+
     //the edges of the playspace.
     float xMin;
     float xMax;
@@ -74,6 +80,7 @@ public class Player : MonoBehaviour{
                 Quaternion.identity) as GameObject;
 
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeedPlayer);
+            AudioSource.PlayClipAtPoint(shootSound, Camera.main.transform.position, shootSoundVolume);
 
             yield return new WaitForSeconds(projectileFireRecoveryTime); 
         }
@@ -120,7 +127,16 @@ public class Player : MonoBehaviour{
     }
 
     private void playerDeath() {
-        Destroy(gameObject);
+        extraLifes--;
+        AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, deathSoundVolume);
+
+        if (extraLifes <0) {
+            //FindObjectOfType<SceneLoader>();
+            Destroy(gameObject);
+        } else {
+            //reset player state
+        }
+        
     
     }
 

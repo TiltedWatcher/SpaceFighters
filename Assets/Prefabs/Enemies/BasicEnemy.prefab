@@ -121,7 +121,7 @@ MonoBehaviour:
   explosionDuration: 1
   shootSound:
     audio: {fileID: 8300000, guid: 4ecc12642575e3f439a74494e25c64fd, type: 3}
-    volume: 0.5
+    volume: 0.1
   deathSound:
     audio: {fileID: 8300000, guid: 38d71538e06287d4fb1fbe17a8799b68, type: 3}
     volume: 0.3

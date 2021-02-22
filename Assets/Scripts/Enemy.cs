@@ -2,9 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable] 
+public class EnemySoundEffects{
+    [SerializeField] AudioClip audio;
+    [SerializeField] [Range(0,1)]float volume;
+
+    public float Volume {
+        get => volume;
+    }
+    public AudioClip Audio {
+        get => audio;
+    }
+}
+
 public class Enemy : MonoBehaviour{
     // Start is called before the first frame update
-
+    [Header("Enemy Combat Values")]
     [SerializeField] protected float speed;
     [SerializeField] protected float health;
     [SerializeField] protected float dmgReductionFromArmor;
@@ -12,9 +25,13 @@ public class Enemy : MonoBehaviour{
     [SerializeField] float maxTimeBetweenShots;
     [SerializeField] float projectileSpeed;
     [SerializeField] protected bool isBoss;
+
+    [Header("Effects")]
     [SerializeField] GameObject projectile;
     [SerializeField] GameObject deathVFX;
     [SerializeField] float explosionDuration = 1f;
+    [SerializeField] EnemySoundEffects shootSound;
+    [SerializeField] EnemySoundEffects deathSound;
 
 
     //states 
@@ -25,7 +42,6 @@ public class Enemy : MonoBehaviour{
     BossLogic thisBoss;
 
     void Start(){
-       
         if (isBoss) {
             thisBoss = gameObject.GetComponent<BossLogic>();
         } 
@@ -45,6 +61,13 @@ public class Enemy : MonoBehaviour{
 
     private void OnTriggerEnter2D(Collider2D other) {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        
+
+        if (other.tag == "Shredder") {
+            Debug.Log("Collided with:" + other.tag);
+            DestroyThisEnemy();
+            return;
+        }
         
         if (!damageDealer) {
             return;
@@ -70,6 +93,7 @@ public class Enemy : MonoBehaviour{
             transform.position, 
             Quaternion.identity);
         enemyFire.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
+        AudioSource.PlayClipAtPoint(shootSound.Audio, Camera.main.transform.position, shootSound.Volume);
     }
 
     private void ProcessHit(DamageDealer damageDealer) {
@@ -100,6 +124,8 @@ public class Enemy : MonoBehaviour{
         alive = false;
         StopCoroutine(bossFight());
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
+        Debug.Log("Enemy destroyed, playing Sound");
+        AudioSource.PlayClipAtPoint(deathSound.Audio, Camera.main.transform.position, deathSound.Volume);
         Destroy(gameObject);
         Destroy(explosion, explosionDuration);
     }

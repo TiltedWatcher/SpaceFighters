@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdce10d10f865784d9fe1eafba037705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 6
   health: 250
   dmgReductionFromArmor: 0
   minTimeBetweenShots: 0.5
@@ -119,6 +119,12 @@ MonoBehaviour:
   projectile: {fileID: 3237549433109087503, guid: d0d42ed968704644e97975e0843dd2d7, type: 3}
   deathVFX: {fileID: 1026762148002089913, guid: bcd0c2db521f8384abc559d2fc16ffcb, type: 3}
   explosionDuration: 1
+  shootSound:
+    audio: {fileID: 8300000, guid: 4ecc12642575e3f439a74494e25c64fd, type: 3}
+    volume: 0.5
+  deathSound:
+    audio: {fileID: 8300000, guid: 38d71538e06287d4fb1fbe17a8799b68, type: 3}
+    volume: 0.3
   shotTimer: 0
 --- !u!58 &7200731708010623128
 CircleCollider2D:

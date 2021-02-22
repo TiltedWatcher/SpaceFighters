@@ -92,6 +92,8 @@ public class Enemy : MonoBehaviour{
             projectile, 
             transform.position, 
             Quaternion.identity);
+        enemyFire.transform.position = new Vector3(enemyFire.transform.position.x, enemyFire.transform.position.y, 1);
+        enemyFire.transform.Rotate(0, 0, 180);
         enemyFire.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
         AudioSource.PlayClipAtPoint(shootSound.Audio, Camera.main.transform.position, shootSound.Volume);
     }

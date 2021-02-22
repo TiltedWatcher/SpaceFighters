@@ -7,6 +7,7 @@ public class ModifiableParameters : MonoBehaviour{
 
     //game parameters
     [Range(0.1f, 20f)] [SerializeField] float timescale = 1;
+    bool paused = false;
 
 
 
@@ -17,6 +18,15 @@ public class ModifiableParameters : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        Time.timeScale = timescale;
+        if (Time.timeScale == 0) {
+            paused = true;
+        } else {
+            paused = false;
+        }
+
+        if (!paused) {
+            Time.timeScale = timescale;
+        }
+        
     }
 }

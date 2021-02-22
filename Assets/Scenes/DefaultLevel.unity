@@ -796,7 +796,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.82506996, g: 0.7688679, b: 1, a: 0.78431374}
     m_HighlightedColor: {r: 0.9811321, g: 0.5784977, b: 0.77144253, a: 0.9019608}
@@ -846,7 +846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.69803923, g: 0.8117647, b: 0.90588236, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1037,7 +1037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.69803923, g: 0.81026065, b: 0.90588236, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.69803923, g: 0.8117647, b: 0.90588236, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1150,7 +1150,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.82506996, g: 0.7688679, b: 1, a: 0.78431374}
     m_HighlightedColor: {r: 0.9811321, g: 0.5784977, b: 0.77144253, a: 0.9019608}
@@ -1389,7 +1389,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.82506996, g: 0.7688679, b: 1, a: 0.78431374}
     m_HighlightedColor: {r: 0.9811321, g: 0.5784977, b: 0.77144253, a: 0.9019608}
@@ -1483,6 +1483,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 786810d595e6d9f499282870bac076f1, type: 3}
+--- !u!1 &5441719170364454159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5441719170749435250, guid: 786810d595e6d9f499282870bac076f1, type: 3}
+  m_PrefabInstance: {fileID: 5441719170364454158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5441719170364454160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5441719170364454159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0bed9fe4d2b00489f57e86a3f2a733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aspectWidth: 9
+  aspectHeight: 16
 --- !u!222 &5927820892413499888
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -123,6 +123,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &34008585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5441719170749435250, guid: 786810d595e6d9f499282870bac076f1, type: 3}
+  m_PrefabInstance: {fileID: 1985837770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &34008589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34008585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0bed9fe4d2b00489f57e86a3f2a733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aspectWidth: 9
+  aspectHeight: 16
 --- !u!1001 &346327303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -251,6 +270,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2860348037869302465, guid: f93ee2dd06a692146af55e1d3bd5b33e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.500122
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275891925260057230, guid: f93ee2dd06a692146af55e1d3bd5b33e, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4275891925260057231, guid: f93ee2dd06a692146af55e1d3bd5b33e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -333,6 +360,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4275891925260057231, guid: f93ee2dd06a692146af55e1d3bd5b33e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275891925260057233, guid: f93ee2dd06a692146af55e1d3bd5b33e, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275891925260057233, guid: f93ee2dd06a692146af55e1d3bd5b33e, type: 3}
+      propertyPath: m_MatchWidthOrHeight
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4275891925260057235, guid: f93ee2dd06a692146af55e1d3bd5b33e, type: 3}
@@ -550,6 +585,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5441719170749435249, guid: 786810d595e6d9f499282870bac076f1, type: 3}
+      propertyPath: m_AllowDynamicResolution
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5441719170749435250, guid: 786810d595e6d9f499282870bac076f1, type: 3}
       propertyPath: m_Name
       value: Main Camera

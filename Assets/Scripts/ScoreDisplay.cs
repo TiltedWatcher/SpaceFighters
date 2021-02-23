@@ -16,7 +16,6 @@ public class ScoreDisplay : MonoBehaviour{
     void Start(){
         currentGameSession = FindObjectOfType<GameSession>();
         scoreText = GetComponent<TextMeshProUGUI>();
-        Debug.Log(scoreText.name);
     }
 
     // Update is called once per frame

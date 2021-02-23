@@ -192,6 +192,10 @@ public class Player : MonoBehaviour{
         }
     }
 
+    public float getCurrentHealth() {
+        return remainingHealth;
+    }
+
 
     private void createPlaySpaceBoundaries() {
         Camera gameCamera = Camera.main;

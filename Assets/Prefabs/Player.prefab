@@ -98,14 +98,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLaserPrefab: {fileID: 999204909185383528, guid: 847f6b5b8c9af2449870b6bcc796f0fa, type: 3}
   projectileSpeedPlayer: 18
-  projectileFireRecoveryTime: 0.15
+  projectileFireRecoveryTime: 0.1
   playerMoveSpeed: 15
   playSpacePaddingY: 4
   playSpacePaddingX: 0.5
-  playerHealth: 300
-  isInvincible: 1
+  playerHealth: 600
+  isInvincible: 0
   damageReduction: 0
   extraLifes: 0
+  respawnTimer: 1
+  gracePeriodAfterRespawn: 3
+  scaleEveryXPoints: 3000
+  DmgBonus: 5
+  deathSound: {fileID: 8300000, guid: b157586bf53b59a4999b999320eeba88, type: 3}
+  deathSoundVolume: 0.3
+  shootSound: {fileID: 8300000, guid: d2027b884aa85b349b653be25910afea, type: 3}
+  shootSoundVolume: 0.05
 --- !u!60 &5974451548261011097
 PolygonCollider2D:
   m_ObjectHideFlags: 0

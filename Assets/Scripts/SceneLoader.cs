@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour{
     // Start is called before the first frame update
+    [SerializeField] float gameOverDelay = 1.5f;
 
     public void loadScene(int sceneIndex) {
         SceneManager.LoadScene(sceneIndex);
@@ -27,6 +28,12 @@ public class SceneLoader : MonoBehaviour{
     }
 
     public void GameOver() {
+        StartCoroutine(WaitAndLoad());
+        
+    }
+
+    IEnumerator WaitAndLoad() {
+        yield return new WaitForSeconds(gameOverDelay);
         SceneManager.LoadScene("GameOver");
     }
 }

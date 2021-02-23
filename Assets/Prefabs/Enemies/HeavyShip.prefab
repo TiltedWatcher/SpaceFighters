@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdce10d10f865784d9fe1eafba037705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5
   health: 750
   dmgReductionFromArmor: 20
   isBoss: 0
@@ -193,6 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da9147a3f8bfa74990b917b1ea7a00c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 300
+  damage: 1000
   ignoresArmor: 0
   speed: 0

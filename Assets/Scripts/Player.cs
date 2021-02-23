@@ -22,6 +22,8 @@ public class Player : MonoBehaviour{
     [SerializeField] int extraLifes;
     [SerializeField] float respawnTimer = 1f;
     [SerializeField] float gracePeriodAfterRespawn = 3f;
+    [SerializeField] int scaleEveryXPoints = 1000;
+    [SerializeField] int DmgBonus = 50;
 
     [Header("Player FX")]
     [SerializeField] AudioClip deathSound;
@@ -39,17 +41,22 @@ public class Player : MonoBehaviour{
     bool repeatFireIsActive = false;
     float remainingHealth;
     bool controllsEnabled = true;
+    int currentScore;
+    int lastScore;
+    int totalDmgBuff;
 
     Coroutine repeatFireCor;
 
     //cached components
     Vector2 startTransform;
+    GameSession gameSession;
 
     // Start is called before the first frame update
     void Start(){
         createPlaySpaceBoundaries();
         remainingHealth = playerHealth;
         startTransform = transform.position;
+        gameSession = FindObjectOfType<GameSession>();
     }
 
 
@@ -59,6 +66,7 @@ public class Player : MonoBehaviour{
             move();
             Fire();
         }
+        scaleDamageByScore();
         
     }
 
@@ -89,6 +97,7 @@ public class Player : MonoBehaviour{
                 Quaternion.identity) as GameObject;
 
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeedPlayer);
+            laser.GetComponent<DamageDealer>().buffDamage(totalDmgBuff);
             AudioSource.PlayClipAtPoint(shootSound, Camera.main.transform.position, shootSoundVolume);
 
             yield return new WaitForSeconds(projectileFireRecoveryTime); 
@@ -169,6 +178,18 @@ public class Player : MonoBehaviour{
         isInvincible = false;
 
 
+    }
+
+    private void scaleDamageByScore() {
+        currentScore = gameSession.getScore();
+        if (currentScore == lastScore) {
+            return;
+        }
+        if ((currentScore - lastScore) >= scaleEveryXPoints) {
+            lastScore = currentScore;
+            totalDmgBuff += DmgBonus;
+            Debug.Log("Damage buffed");
+        }
     }
 
 

@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c41f47ed17017c5468cdeee50230cb30, type: 3}
-  m_Name: RandomBase
+  m_Name: BasicWaveLarge
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 2465890857993298894, guid: 0f57439f85ffad14da99c7ce1cddddd3, type: 3}
-  - {fileID: 2465890857993298894, guid: 3974cf796cb501246ba7c76c90d77e45, type: 3}
-  pathPrefab: {fileID: 4678807914460580957, guid: 6cb9408d6b84b2e4aa816c92aaeb6321, type: 3}
+  pathPrefab: {fileID: 4678807914460580957, guid: 78e940d83c9592943a681fcc27676650, type: 3}
   timeBetweenSpawns: 0.5
   spawnTimerRandomizer: 0.3
-  numberOfEnemiesInWave: 25
-  randomizeEnemies: 1
+  numberOfEnemiesInWave: 35
+  randomizeEnemies: 0
   isBossWave: 0

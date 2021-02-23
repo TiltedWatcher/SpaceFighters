@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 2465890857993298888}
   - component: {fileID: 2465890857993298889}
   - component: {fileID: 1578678886}
-  - component: {fileID: -3266551836277950380}
-  - component: {fileID: 7200731708010623128}
-  - component: {fileID: 6625146174148950527}
-  - component: {fileID: -5153333229467240194}
+  - component: {fileID: -6958872275232625715}
+  - component: {fileID: 8005685758716027355}
+  - component: {fileID: -764053804118111467}
+  - component: {fileID: -4674782699209973955}
+  - component: {fileID: 3014086691863788612}
   m_Layer: 9
-  m_Name: BasicEnemy
+  m_Name: Boss2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 2465890857993298894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.2, y: 2.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8a7f4b0e4d2314d46a28f47b43f4aecb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64e4ba80205e758499237e2ff4546bb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2e2390c7cb19649bcac86e5dd4707b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-3266551836277950380
+--- !u!114 &-6958872275232625715
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,15 +112,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdce10d10f865784d9fe1eafba037705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  health: 250
-  dmgReductionFromArmor: 0
-  isBoss: 0
-  scoreValue: 100
-  minTimeBetweenShots: 0.5
-  maxTimeBetweenShots: 3
-  projectileSpeed: 8
-  projectile: {fileID: 3237549433109087503, guid: d0d42ed968704644e97975e0843dd2d7, type: 3}
+  speed: 12
+  health: 8000
+  dmgReductionFromArmor: 50
+  isBoss: 1
+  scoreValue: 1800
+  minTimeBetweenShots: 0
+  maxTimeBetweenShots: 0.5
+  projectileSpeed: 12
+  projectile: {fileID: 3237549433109087503, guid: 2fe80dfdf328a8e4db9b8f27d79b0272, type: 3}
   deathVFX: {fileID: 1026762148002089913, guid: bcd0c2db521f8384abc559d2fc16ffcb, type: 3}
   explosionDuration: 1
   shootSound:
@@ -129,8 +130,8 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 38d71538e06287d4fb1fbe17a8799b68, type: 3}
     volume: 0.3
   shotTimer: 0
---- !u!58 &7200731708010623128
-CircleCollider2D:
+--- !u!60 &8005685758716027355
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -143,9 +144,59 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.46
---- !u!50 &6625146174148950527
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.14, y: 0.82}
+    newSize: {x: 1.04, y: 0.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.40685946, y: -0.5119024}
+      - {x: -0.22327758, y: -0.5016908}
+      - {x: -0.14744532, y: -0.2736641}
+      - {x: 0.16961639, y: -0.27094617}
+      - {x: 0.22644821, y: -0.50334835}
+      - {x: 0.40433866, y: -0.5040236}
+      - {x: 0.6426678, y: -0.7650951}
+      - {x: 0.8454535, y: -0.729377}
+      - {x: 0.8400775, y: -0.43427166}
+      - {x: 0.4987315, y: -0.12508751}
+      - {x: 0.44023678, y: 0.07560443}
+      - {x: 0.67071646, y: 0.72354645}
+      - {x: 0.58291614, y: 0.7617915}
+      - {x: 0.16126145, y: 0.2427214}
+      - {x: -0.16088536, y: 0.23771876}
+      - {x: -0.55960155, y: 0.7588126}
+      - {x: -0.68118775, y: 0.7186314}
+      - {x: -0.46803695, y: 0.068912566}
+      - {x: -0.51433605, y: -0.12687527}
+      - {x: -0.86371255, y: -0.4274581}
+      - {x: -0.8297224, y: -0.7297905}
+      - {x: -0.6415524, y: -0.75073946}
+--- !u!114 &-764053804118111467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465890857993298894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ae151e41431a346922b138c204fbb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossWeapons:
+  - projectile: {fileID: 0}
+    weaponCooldownMin: 0
+    weaponCooldownMax: 0
+  - projectile: {fileID: 0}
+    weaponCooldownMin: 0
+    weaponCooldownMax: 0
+--- !u!50 &-4674782699209973955
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -166,7 +217,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-5153333229467240194
+--- !u!114 &3014086691863788612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

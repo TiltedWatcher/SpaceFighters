@@ -1152,6 +1152,70 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayArea
       objectReference: {fileID: 0}
+    - target: {fileID: 7930287015533290015, guid: c1a8b53e2581972459831341350b3d40, type: 3}
+      propertyPath: secondsBetweenWaves
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930287015533290015, guid: c1a8b53e2581972459831341350b3d40, type: 3}
+      propertyPath: WaveConfigs.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930287015533290015, guid: c1a8b53e2581972459831341350b3d40, type: 3}
+      propertyPath: WaveConfigs.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 62e49d1dc2ca745449280451dfb315a9, type: 2}
+    - target: {fileID: 7930287015533290015, guid: c1a8b53e2581972459831341350b3d40, type: 3}
+      propertyPath: WaveConfigs.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 57332717f7e0eff4787fb6a9a5c289b2, type: 2}
+    - target: {fileID: 7930287015533290015, guid: c1a8b53e2581972459831341350b3d40, type: 3}
+      propertyPath: WaveConfigs.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 28b45c63fe56f004f9ea0981ad577768, type: 2}
+    - target: {fileID: 7930287015533290015, guid: c1a8b53e2581972459831341350b3d40, type: 3}
+      propertyPath: WaveConfigs.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 88f9361fcd57f8b44a55b7897031668e, type: 2}
+    - target: {fileID: 7930287015533290015, guid: c1a8b53e2581972459831341350b3d40, type: 3}
+      propertyPath: WaveConfigs.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 787e71f6fa5c91a49830c56d66f92bd7, type: 2}
+    - target: {fileID: 7930287015533290015, guid: c1a8b53e2581972459831341350b3d40, type: 3}
+      propertyPath: WaveConfigs.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: a18853734ae808548a9e230ccc7d8b16, type: 2}
+    - target: {fileID: 7930287015533290015, guid: c1a8b53e2581972459831341350b3d40, type: 3}
+      propertyPath: WaveConfigs.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5cf04329957a8c44591b9df7a1e82d8f, type: 2}
+    - target: {fileID: 7930287015533290015, guid: c1a8b53e2581972459831341350b3d40, type: 3}
+      propertyPath: WaveConfigs.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 28b45c63fe56f004f9ea0981ad577768, type: 2}
+    - target: {fileID: 7930287015533290015, guid: c1a8b53e2581972459831341350b3d40, type: 3}
+      propertyPath: WaveConfigs.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: d66ebb811cd3ac1409f83ae87a003892, type: 2}
+    - target: {fileID: 7930287015533290015, guid: c1a8b53e2581972459831341350b3d40, type: 3}
+      propertyPath: WaveConfigs.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: a4f46d3dee09f5f4f9657c0c95e7d534, type: 2}
+    - target: {fileID: 7930287015533290015, guid: c1a8b53e2581972459831341350b3d40, type: 3}
+      propertyPath: WaveConfigs.Array.data[12]
+      value: 
+      objectReference: {fileID: 11400000, guid: 88f9361fcd57f8b44a55b7897031668e, type: 2}
+    - target: {fileID: 7930287015533290015, guid: c1a8b53e2581972459831341350b3d40, type: 3}
+      propertyPath: WaveConfigs.Array.data[13]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5cf04329957a8c44591b9df7a1e82d8f, type: 2}
+    - target: {fileID: 7930287015533290015, guid: c1a8b53e2581972459831341350b3d40, type: 3}
+      propertyPath: WaveConfigs.Array.data[14]
+      value: 
+      objectReference: {fileID: 11400000, guid: a18853734ae808548a9e230ccc7d8b16, type: 2}
+    - target: {fileID: 7930287015533290015, guid: c1a8b53e2581972459831341350b3d40, type: 3}
+      propertyPath: WaveConfigs.Array.data[15]
+      value: 
+      objectReference: {fileID: 11400000, guid: 81197823bd1e37e45852517118a6fba0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1a8b53e2581972459831341350b3d40, type: 3}
 --- !u!224 &2082627235699843583
@@ -1843,7 +1907,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: d2027b884aa85b349b653be25910afea, type: 3}
     - target: {fileID: 7994680716021223266, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
       propertyPath: isInvincible
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7994680716021223266, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
       propertyPath: deathSoundVolume

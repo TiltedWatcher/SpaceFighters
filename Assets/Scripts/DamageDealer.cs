@@ -17,6 +17,10 @@ public class DamageDealer : MonoBehaviour{
         get => ignoresArmor;
     }
 
+    public void buffDamage(int buff) {
+        damage +=buff;
+    }
+
     public void hit() {
         Destroy(gameObject);
     }

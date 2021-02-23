@@ -24,10 +24,12 @@ public class MusicPlayer : MonoBehaviour{
         audioPlayer.volume = volume;
         audioPlayer.loop = false;
         audioPlayer.clip = generalMusic[currentIndex];
-        audioPlayer.Play();
         
     }
 
+    private void Start() {
+        audioPlayer.Play();
+    }
     private void SetUpSingleton() {
         if (FindObjectsOfType(GetType()).Length > 1) {
             Destroy(gameObject);

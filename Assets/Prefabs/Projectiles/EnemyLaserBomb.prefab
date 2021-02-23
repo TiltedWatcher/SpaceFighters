@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4959670839024473432}
   - component: {fileID: 3012064254015112220}
   - component: {fileID: 1741340124195062324}
+  - component: {fileID: -491823195966499403}
   m_Layer: 11
   m_Name: EnemyLaserBomb
   m_TagString: Laser
@@ -136,3 +137,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.16169684
+--- !u!114 &-491823195966499403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3237549433109087503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e244e77e28b1253439cfe71fb5c0256e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinnSpeed: 720

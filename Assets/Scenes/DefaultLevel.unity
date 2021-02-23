@@ -1699,12 +1699,16 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: b157586bf53b59a4999b999320eeba88, type: 3}
     - target: {fileID: 7994680716021223266, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
       propertyPath: extraLifes
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7994680716021223266, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
       propertyPath: shootSound
       value: 
       objectReference: {fileID: 8300000, guid: d2027b884aa85b349b653be25910afea, type: 3}
+    - target: {fileID: 7994680716021223266, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
+      propertyPath: isInvincible
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7994680716021223266, guid: 3821f40d6911cdd4e80983d4aebd7533, type: 3}
       propertyPath: deathSoundVolume
       value: 0.3

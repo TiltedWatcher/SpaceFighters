@@ -20,6 +20,8 @@ public class Player : MonoBehaviour{
     [SerializeField] bool isInvincible;
     [SerializeField] int damageReduction;
     [SerializeField] int extraLifes;
+    [SerializeField] float respawnTimer = 1f;
+    [SerializeField] float gracePeriodAfterRespawn = 3f;
 
     [Header("Player FX")]
     [SerializeField] AudioClip deathSound;
@@ -36,20 +38,27 @@ public class Player : MonoBehaviour{
     //states
     bool repeatFireIsActive = false;
     float remainingHealth;
+    bool controllsEnabled = true;
 
     Coroutine repeatFireCor;
+
+    //cached components
+    Vector2 startTransform;
 
     // Start is called before the first frame update
     void Start(){
         createPlaySpaceBoundaries();
         remainingHealth = playerHealth;
+        startTransform = transform.position;
     }
 
 
     // Update is called once per frame
     void Update(){
-        move();
-        Fire();
+        if (controllsEnabled) {
+            move();
+            Fire();
+        }
         
     }
 
@@ -133,11 +142,33 @@ public class Player : MonoBehaviour{
         if (extraLifes <0) {
             //FindObjectOfType<SceneLoader>();
             Destroy(gameObject);
+            FindObjectOfType<SceneLoader>().loadScene("GameOver");
         } else {
+            StartCoroutine(respawnPlayer());
             //reset player state
         }
         
     
+    }
+
+    IEnumerator respawnPlayer() {
+        Debug.Log("Respawning Player");
+        remainingHealth = playerHealth;
+        isInvincible = true;
+        controllsEnabled = false;
+        transform.position = startTransform;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+        yield return new WaitForSeconds(respawnTimer);
+        Debug.Log("Respawned");
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+        yield return new WaitForSeconds(respawnTimer/2);
+        controllsEnabled = true;
+        yield return new WaitForSeconds(gracePeriodAfterRespawn);
+        isInvincible = false;
+
+
     }
 
 

@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
-  health: 8000
+  health: 12000
   dmgReductionFromArmor: 50
   isBoss: 1
   scoreValue: 1800

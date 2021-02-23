@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  health: 5000
+  health: 7000
   dmgReductionFromArmor: 30
   isBoss: 1
   scoreValue: 1000
@@ -231,4 +231,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1000
   ignoresArmor: 0
-  speed: 0

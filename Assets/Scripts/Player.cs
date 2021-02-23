@@ -142,7 +142,7 @@ public class Player : MonoBehaviour{
         if (extraLifes <0) {
             //FindObjectOfType<SceneLoader>();
             Destroy(gameObject);
-            FindObjectOfType<SceneLoader>().loadScene("GameOver");
+            FindObjectOfType<SceneLoader>().GameOver();
         } else {
             StartCoroutine(respawnPlayer());
             //reset player state

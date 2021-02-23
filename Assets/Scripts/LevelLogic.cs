@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour{
+public class LevelLogic : MonoBehaviour{
 
     [SerializeField] Canvas pauseMenu;
-    [SerializeField] float timeScale;
+    [SerializeField] [Range(0,10)] float timeScale = 1;
+    [SerializeField] SceneLoader sceneLoader;
     bool isPaused = false;
     void Start(){
         pauseMenu.gameObject.SetActive(false);
@@ -15,8 +16,11 @@ public class PauseMenu : MonoBehaviour{
     // Update is called once per frame
     void Update(){
         checkInput();
-        pauseGame(isPaused);
-        timeScale = Time.timeScale;
+
+        if (!isPaused) {
+            Time.timeScale = timeScale;
+        }
+        
     }
 
     private void checkInput() {

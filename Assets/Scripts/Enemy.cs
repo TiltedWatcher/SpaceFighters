@@ -133,7 +133,11 @@ public class Enemy : MonoBehaviour{
     }
 
     public IEnumerator bossFight() {
-        yield return new WaitWhile(isAlive) ;
+        var musicPlayer = FindObjectOfType<MusicPlayer>();
+        musicPlayer.startBossTrack();
+        yield return new WaitWhile(isAlive);
+        Debug.Log("Bossfight ending");
+        FindObjectOfType<MusicPlayer>().BossBattleHappening = false;
     }
 
     public bool IsBoss {
@@ -149,5 +153,9 @@ public class Enemy : MonoBehaviour{
     }
     public float Health {
         get => health;
+    }
+
+    private void OnDestroy() {
+        alive = false;
     }
 }

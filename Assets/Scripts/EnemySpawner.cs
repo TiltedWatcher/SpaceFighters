@@ -47,6 +47,7 @@ public class EnemySpawner : MonoBehaviour{
             var lastEnemy = newEnemy.GetComponent<Enemy>();
 
             if (waveConfig.IsBossWave()) {
+               
                 yield return StartCoroutine(lastEnemy.bossFight());
             } else {
                 yield return new WaitForSeconds(waveConfig.getTimeBetweenSpawns());

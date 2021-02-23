@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Shredder
   - Laser
+  - Score
   layers:
   - Default
   - TransparentFX

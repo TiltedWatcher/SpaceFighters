@@ -21,10 +21,13 @@ public class Enemy : MonoBehaviour{
     [SerializeField] protected float speed;
     [SerializeField] protected float health;
     [SerializeField] protected float dmgReductionFromArmor;
+    [SerializeField] protected bool isBoss;
+    [SerializeField] int scoreValue;
+
+    [Header("Shooting")]
     [SerializeField] float minTimeBetweenShots;
     [SerializeField] float maxTimeBetweenShots;
     [SerializeField] float projectileSpeed;
-    [SerializeField] protected bool isBoss;
 
     [Header("Effects")]
     [SerializeField] GameObject projectile;
@@ -122,9 +125,18 @@ public class Enemy : MonoBehaviour{
         Destroy(gameObject);
     }
 
+    public void DestroyThisEnemy(bool shredded) {
+        Debug.Log("Enemy Destroyed");
+        alive = false;
+        StopCoroutine(bossFight());
+        FindObjectOfType<GameSession>().enemyEscaped(scoreValue);
+        Destroy(gameObject);
+    }
+
     public void Death() {
         alive = false;
         StopCoroutine(bossFight());
+        FindObjectOfType<GameSession>().enemyKilled(scoreValue);
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Debug.Log("Enemy destroyed, playing Sound");
         AudioSource.PlayClipAtPoint(deathSound.Audio, Camera.main.transform.position, deathSound.Volume);
@@ -158,4 +170,6 @@ public class Enemy : MonoBehaviour{
     private void OnDestroy() {
         alive = false;
     }
+
+ 
 }

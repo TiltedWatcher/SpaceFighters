@@ -16,10 +16,16 @@ public class SceneLoader : MonoBehaviour{
     }
 
     public void reloadScene() {
+        if (FindObjectsOfType<GameSession>().Length == 1) {
+            FindObjectOfType<GameSession>().resetScore();
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void loadMainMenu() {
+        if (FindObjectsOfType<GameSession>().Length == 1) {
+            Destroy(FindObjectOfType<GameSession>(), 0.1f);
+        }
         SceneManager.LoadScene(0);
     }
 
@@ -33,6 +39,7 @@ public class SceneLoader : MonoBehaviour{
     }
 
     IEnumerator WaitAndLoad() {
+        FindObjectOfType<MusicPlayer>().BossBattleHappening = false;
         yield return new WaitForSeconds(gameOverDelay);
         SceneManager.LoadScene("GameOver");
     }

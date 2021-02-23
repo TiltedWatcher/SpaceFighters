@@ -14,7 +14,12 @@ public class Shredder : MonoBehaviour{
         if (collider.tag == "Laser") {
             Destroy(collider.gameObject);
         } else if (destroysEnemies) {
-            Destroy(collider.gameObject);
+            if (collider.gameObject.GetComponent<Enemy>() != null) {
+                collider.gameObject.GetComponent<Enemy>().DestroyThisEnemy(true);
+            } else {
+                Destroy(collider.gameObject);
+            }
+            
         }
     
     }

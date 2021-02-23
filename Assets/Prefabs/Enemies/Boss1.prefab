@@ -115,10 +115,11 @@ MonoBehaviour:
   speed: 5
   health: 5000
   dmgReductionFromArmor: 30
+  isBoss: 1
+  scoreValue: 1000
   minTimeBetweenShots: 0
   maxTimeBetweenShots: 0.5
   projectileSpeed: 12
-  isBoss: 1
   projectile: {fileID: 3237549433109087503, guid: 2fe80dfdf328a8e4db9b8f27d79b0272, type: 3}
   deathVFX: {fileID: 1026762148002089913, guid: bcd0c2db521f8384abc559d2fc16ffcb, type: 3}
   explosionDuration: 1

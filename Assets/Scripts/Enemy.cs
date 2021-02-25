@@ -115,7 +115,8 @@ public class Enemy : MonoBehaviour{
             if (health <= 0) {
                 Death();
             }
-        } 
+        }
+        damageDealer.hit();
         
     }
 
@@ -182,6 +183,10 @@ public class Enemy : MonoBehaviour{
 
     private void OnDestroy() {
         alive = false;
+    }
+
+    public LootTable GetLootTable() {
+        return lootTable;
     }
 
  

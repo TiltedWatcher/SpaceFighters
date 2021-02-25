@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7556623776132303528}
   - component: {fileID: 6176927548034506799}
   - component: {fileID: 6638942830849016727}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: HealthPackSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,14 +107,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7556623776132303529}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0.1
+  m_GravityScale: 0.05
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

@@ -23,6 +23,12 @@ public class BossWeapon {
 public class BossLogic : MonoBehaviour{
 
     [SerializeField] BossWeapon[] bossWeapons;
+    [SerializeField] int amountOfGuaranteedCommonDrops;
+    [SerializeField] int amountOfGuaranteedRareDrops;
+
+    [SerializeField] float randomOffsetRange = 5f;
+
+    LootTable lootTable;
 
     /*   private void OnTriggerEnter2D(Collider2D collision) {
            DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();
@@ -34,7 +40,34 @@ public class BossLogic : MonoBehaviour{
        }
     */
 
+    private void Start() {
+        var enemy = GetComponent<Enemy>();
+        lootTable = enemy.GetLootTable();
+    }
 
+    private void OnDestroy() {
+        
+        for (int i = 0; i < amountOfGuaranteedCommonDrops; i++) {
+            var loot = lootTable.dropSpecificRarityLoot("Common");
+            placeLoot(loot);
+            
+        }
 
+        for (int i = 0; i < amountOfGuaranteedRareDrops; i++) {
+            var loot = lootTable.dropSpecificRarityLoot("Rare");
+            placeLoot(loot);
+
+        }
+
+    }
+
+    private void placeLoot(GameObject loot) {
+        var offsetX = Random.Range(-randomOffsetRange, randomOffsetRange);
+        var offsetY = Random.Range(-randomOffsetRange, randomOffsetRange);
+        var spawnPos = transform.position;
+        spawnPos.x += offsetX;
+        spawnPos.y += offsetY;
+        var spawnedLoot = Instantiate(loot, spawnPos, Quaternion.identity);
+    }
 
 }

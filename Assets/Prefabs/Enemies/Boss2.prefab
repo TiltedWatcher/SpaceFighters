@@ -189,6 +189,9 @@ MonoBehaviour:
   - projectile: {fileID: 0}
     weaponCooldownMin: 0
     weaponCooldownMax: 0
+  amountOfGuaranteedCommonDrops: 5
+  amountOfGuaranteedRareDrops: 2
+  randomOffsetRange: 3
 --- !u!50 &-4674782699209973955
 Rigidbody2D:
   serializedVersion: 4

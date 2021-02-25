@@ -27,26 +27,7 @@ public class LootTable : ScriptableObject{
     public GameObject dropLoot() {
         range = chanceForNoDrop + chanceForCommonDrop + chanceForRareDrop + chanceForEpicDrop + chanceForLegendaryDrop;
         string lootRarity = determineLootRarity();
-        GameObject loot = null;
-        switch (lootRarity) {
-
-            case "Legendary":
-                loot = determineItem(legendaryDrops);
-                break;
-
-            case "Epic":
-                loot = determineItem(epicDrops);
-                break;
-
-            case "Rare":
-                loot = determineItem(rareDrops);
-                break;
-
-            case "Common":
-                loot = determineItem(commonDrops);
-                break;
-        }
-
+        var loot = dropSpecificRarityLoot(lootRarity);
         return loot;
     }
 
@@ -73,6 +54,30 @@ public class LootTable : ScriptableObject{
         int index = Random.Range(0,indexRange);
 
         return itemList[index];
+    }
+
+    public GameObject dropSpecificRarityLoot(string lootRarity) {
+        GameObject loot = null;
+        switch (lootRarity) {
+
+            case "Legendary":
+                loot = determineItem(legendaryDrops);
+                break;
+
+            case "Epic":
+                loot = determineItem(epicDrops);
+                break;
+
+            case "Rare":
+                loot = determineItem(rareDrops);
+                break;
+
+            case "Common":
+                loot = determineItem(commonDrops);
+                break;
+        }
+
+        return loot;
     }
 
 }

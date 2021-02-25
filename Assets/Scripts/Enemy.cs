@@ -36,6 +36,9 @@ public class Enemy : MonoBehaviour{
     [SerializeField] EnemySoundEffects shootSound;
     [SerializeField] EnemySoundEffects deathSound;
 
+    [Header("Other")]
+    [SerializeField] LootTable lootTable;
+
 
     //states 
     [SerializeField] float shotTimer; //serialized for debugging
@@ -67,7 +70,6 @@ public class Enemy : MonoBehaviour{
         
 
         if (other.tag == "Shredder") {
-            Debug.Log("Collided with:" + other.tag);
             DestroyThisEnemy();
             return;
         }
@@ -126,7 +128,6 @@ public class Enemy : MonoBehaviour{
     }
 
     public void DestroyThisEnemy(bool shredded) {
-        Debug.Log("Enemy Destroyed");
         alive = false;
         StopCoroutine(bossFight());
         FindObjectOfType<GameSession>().enemyEscaped(scoreValue);
@@ -140,6 +141,7 @@ public class Enemy : MonoBehaviour{
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Debug.Log("Enemy destroyed, playing Sound");
         AudioSource.PlayClipAtPoint(deathSound.Audio, Camera.main.transform.position, deathSound.Volume);
+        dropLoot();
         Destroy(gameObject);
         Destroy(explosion, explosionDuration);
     }
@@ -150,6 +152,17 @@ public class Enemy : MonoBehaviour{
         yield return new WaitWhile(isAlive);
         Debug.Log("Bossfight ending");
         FindObjectOfType<MusicPlayer>().BossBattleHappening = false;
+    }
+
+    private void dropLoot() {
+        var loot = lootTable.dropLoot();
+        if (loot != null) {
+            var spawnedLoot = Instantiate(loot, transform.position, Quaternion.identity);
+        }
+      
+        Debug.Log("Dropping " + loot);
+        
+    
     }
 
     public bool IsBoss {

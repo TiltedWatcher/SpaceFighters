@@ -71,11 +71,19 @@ public class Player : MonoBehaviour{
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("Collision with something");
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        PowerUp powerUp = other.gameObject.GetComponent<PowerUp>();
         if (!damageDealer) {
-            return;
+            if (!powerUp) {
+                return;
+            } else {
+                Debug.Log("Processing Powerup");
+                powerUp.ProcessPowerUp(this);
+            }
+        } else {
+            processHit(damageDealer);
         }
-        processHit(damageDealer);
     }
 
     private void Fire() {
@@ -144,6 +152,10 @@ public class Player : MonoBehaviour{
         
     }
 
+    private void processPowerup() {
+    
+    }
+
     private void playerDeath() {
         extraLifes--;
         AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, deathSoundVolume);
@@ -192,8 +204,21 @@ public class Player : MonoBehaviour{
         }
     }
 
+    public void healPlayer(int amount) {
+        Debug.Log("Healing player");
+        remainingHealth +=amount;
+    }
+
+    public void giveExtraLifes(int amount) {
+        extraLifes += amount;
+    }
+
     public float getCurrentHealth() {
         return remainingHealth;
+    }
+
+    public int getPlayerLifes() {
+        return extraLifes;
     }
 
 

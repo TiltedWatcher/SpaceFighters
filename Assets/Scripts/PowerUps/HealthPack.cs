@@ -13,7 +13,7 @@ public class HealthPack : PowerUp{
     }
 
     void Start(){
-        
+        StartCoroutine(startDespawnTimer());
     }
 
     // Update is called once per frame

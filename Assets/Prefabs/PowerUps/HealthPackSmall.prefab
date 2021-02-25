@@ -114,7 +114,7 @@ Rigidbody2D:
   m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0.05
+  m_GravityScale: 0.01
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2150c02c82c6e34e9749e0e0dc3be8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnTimer: 20
+  despawnTimer: 12
   willDespawnAfterTimer: 1
   restoreHealthAmount: 50
 --- !u!61 &6638942830849016727
